@@ -1,0 +1,8 @@
+{
+  "name": "NAME HERE",
+  "dependencies": {
+    "d3": ">= 3.2.4",
+    "topojson": ">= 1.2.2",
+    "jquery": ">= 2.0.3"
+  }
+}
