@@ -9,14 +9,14 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= data.page.title || "Data Project" %></title>
     <script type="text/javascript">
-      __datafiles = <%= Pathname.glob("#{root}/source/data/*.{csv,json}").map { |f| f.basename.to_s } %>
     </script>
 
     <%= stylesheet_link_tag "all" %>
-    <%= javascript_include_tag  "vendor", "all" %>
+    <%= javascript_include_tag  "vendor" %>
   </head>
 
   <body class="<%= page_classes %>">
     <%= yield %>
+    <%= javascript_include_tag  "all" %>
   </body>
 </html>
