@@ -14,16 +14,16 @@ d3.json 'data/counties.json', (data) ->
   counties.features.forEach (d) ->
     props = d.properties
     props.count = 0 if not props.count?
-    props.pop = (props.count / (props.m1519 + props.m2024)) * 100
+    props.mpop = (props.count / (props.m1519 + props.m2024)) * 100
 
-  max = d3.max counties.features, (d) -> d.properties.pop
+  max = d3.max counties.features, (d) -> d.properties.mpop
   fill.domain [0.01, max]
 
   vis.selectAll('.county')
     .data(counties.features)
   .enter().append('path')
     .attr('class', 'county')
-    .style('fill', (d) -> if d.properties.pop == max then 'red' else fill(d.properties.pop))
+    .style('fill', (d) -> if d.properties.mpop == max then 'red' else fill(d.properties.mpop))
     .attr('d', path)
     .on 'click', (d) ->
-      console.log "#{d.properties.pop.toFixed(2)}% of males play college football in #{d.properties.name}"
+      console.log "#{d.properties.mpop.toFixed(2)}% of males play college football in #{d.properties.name}"
