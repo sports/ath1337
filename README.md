@@ -1,4 +1,4 @@
-This is a middleman app.
+![](https://github-images.s3.amazonaws.com/skitch/usa-20130710-212011.png)
 
 Fire it up:
 
